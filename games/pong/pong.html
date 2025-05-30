@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
     <title>Hallow Nemesis - Javascript Pong</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/fontstyles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/fontstyles.css" />
 
     <style>
         * {
@@ -125,19 +125,22 @@
 </head>
 
 <body>
-    <div class="top" style="margin-bottom: 50px;">
+   <div class="top">
         <div class="row padding black">
             <div class="col s3">
-                <a href="/index.html" class="button block black">Home</a>
+                <a href="index.html" class="button block black">Home</a>
             </div>
             <div class="col s3">
-                <a href="/about.html" class="button block black">About</a>
+                <a href="about.html" class="button block black">About</a>
             </div>
             <div class="col s3">
-                <a href="/GameHub.html" class="button block black">Games</a>
-            </div>
-            <div class="col s3">
-                <a href="/#where" class="button block black">Where</a>
+                <div class="dropdown">
+                    <button class="button block black dropdown-toggle">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="apps/Applications.html" class="button block black">Applications</a>
+                        <a href="games/GameHub.html" class="button block black">Games</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -161,7 +164,7 @@
             </h2>
         </div>
     </div>
-    <script src="/javascript_games/pong/pong.js"></script>
+    <script src="games/pong/pong.js"></script>
 </body>
 
 </html>
