@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
+    <title>Hallow Nemesis - Javascript Floppy Bird</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/fontstyles.css" />
+
+    <!-- This script is for google ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3259707707501940"
+        crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            text-align: center;
+            user-select: none;
+        }
+
+        header {
+            margin: 0 auto;
+            width: 431px;
+
+        }
+
+        h1 {
+            background: url("https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png") 0% 340px;
+            padding-bottom: 1.2rem;
+            margin: 0;
+        }
+
+        .score-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 6px;
+            background: #5EE270;
+        }
+    </style>
+</head>
+
+<body class="light-grey">
+    <div class="top">
+        <div class="row padding black">
+            <div class="col s3">
+                <a href="/index.html" class="button block black">Home</a>
+            </div>
+            <div class="col s3">
+                <a href="/about.html" class="button block black">About</a>
+            </div>
+            <div class="col s3">
+                <a href="/GameHub.html" class="button block black">Games</a>
+            </div>
+            <div class="col s3">
+                <a href="/#where" class="button block black">Where</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1 style="margin-top: 5dvi;">Floppy Bird</h1>
+        <div class="score-container">
+            <div id="bestScore"></div>
+            <div id="currentScore"></div>
+        </div>
+    </header>
+
+    <canvas id="canvas" width="431" height="600"></canvas>
+
+    <script src="/javascript_games/flappybird/flappybird.js"></script>
+</body>
+
+</html>

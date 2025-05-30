@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
+    <title>Hallow Nemesis - Javascript 2048</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/fontstyles.css" />
+    <style>
+        :root {
+            --primary-text-color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+            font-family: "Montserrat", sans-serif;
+            font-family: "Ubuntu", sans-serif;
+        }
+
+        body {
+            background-color: slategrey;
+            color: var(--primary-text-color);
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 50vh;
+        }
+
+        .container {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .score {
+            background-color: royalblue;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            margin-bottom: 100px;
+            height: 3rem;
+        }
+
+        .score-title {
+            width: 50%;
+            position: absolute;
+            left: -50px;
+        }
+
+        .score-value {
+            width: 50%;
+            position: absolute;
+            left: 250px;
+        }
+
+        .result {
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px;
+            
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            width: 400px;
+            height: 400px;
+            background-color: rgb(209, 207, 207);
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.753);
+        }
+
+        .grid-item {
+            border: 1px solid var(--primary-text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .rules {
+            border: 2px solid white;
+            padding: 20px;
+        }
+
+        .rules>h1 {
+            width: 100%;
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .rules-para {
+            padding: 20px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="row padding black">
+            <div class="col s3">
+                <a href="/index.html" class="button block black">Home</a>
+            </div>
+            <div class="col s3">
+                <a href="/about.html" class="button block black">About</a>
+            </div>
+            <div class="col s3">
+                <a href="/GameHub.html" class="button block black">Games</a>
+            </div>
+            <div class="col s3">
+                <a href="/#where" class="button block black">Where</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+
+        <div class="container">
+            <div class="score">
+                <p class="score-title">Score:</p>
+                <p class="score-value">0</p>
+            </div>
+            <div class="result"></div>
+            <div class="grid">
+                <div class="grid-item">
+                    <p id="1"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="2"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="3"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="4"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="5"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="6"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="7"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="8"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="9"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="10"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="11"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="12"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="13"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="14"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="15"></p>
+                </div>
+                <div class="grid-item">
+                    <p id="16"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascript_games/2048/2048.js"></script>
+</body>
+
+</html>

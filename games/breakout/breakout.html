@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
+	<title>Hallow Nemesis - Javascript Breakout</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/fontstyles.css" />
+
+
+	<!-- This script is for google ads -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3259707707501940"
+		crossorigin="anonymous"></script>
+
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: gainsboro;
+		}
+
+		canvas {
+			background: #000000;
+			display: block;
+			margin: 0 auto;
+			border: solid darkred 5px;
+			border-radius: 5px;
+		}
+
+		.message {
+            position: fixed;
+            /* color: #48426d; */
+            height: 10vh;
+            text-align: center;
+            width: 70vw;
+            color: darkslategray;
+            left: 15vw;
+            margin: 30px auto auto auto;
+        }
+	</style>
+</head>
+
+<body>
+	<div class="top">
+		<div class="row padding black">
+			<div class="col s3">
+				<a href="/index.html" class="button block black">Home</a>
+			</div>
+			<div class="col s3">
+				<a href="/about.html" class="button block black">About</a>
+			</div>
+			<div class="col s3">
+				<a href="/GameHub.html" class="button block black">Games</a>
+			</div>
+			<div class="col s3">
+				<a href="/#where" class="button block black">Where</a>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<canvas id="screen" width="600" height="480"></canvas>
+		<h1 class="message">
+			Press Enter to Play
+		</h1>
+	</div>
+	
+	<script src="/javascript_games/breakout/index.js"></script>
+</body>
+
+</html>

@@ -5,8 +5,8 @@
     <title class="grey">Hallow Nemesis</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/fontstyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/fontstyles.css">
     <style>
         body,
         h1,
@@ -32,6 +32,9 @@
 <body class="light-grey">
     <!-- content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
+    <div class="top" id="alert-bar">
+        All conmments are currently disabled.
+    </div>
 
     <div class="top">
         <div class="row padding black">
@@ -42,17 +45,19 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <a href="/about.html" class="button block black">About</a>
             </div>
             <div class="col s3">
-                <a href="/GameHub.html" class="button block black">Games</a>
+                <div class="dropdown">
+                    <button class="button block black dropdown-toggle">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="/apps/Applications.html" class="button block black">Applications</a>
+                        <a href="/games/GameHub.html" class="button block black">Games</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <a href="/#where" class="button block black">Where</a>
             </div>
         </div>
     </div>
-
-    <div class="col s3">
-        <a href="/#where" class="button block black">Where</a>
-    </div>
-    </div>
-    </div>
-
 
     <div class="content" style="max-width:1400px;">
 
@@ -69,7 +74,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             <div class="col l8 s12">
                 <!-- Blog entry -->
                 <div class="card-4 margin white">
-                    <img src="images/website/CharTrial.jpeg" alt="Test" style="width:100%">
+                    <img src="/assets/website/CharTrial.jpeg" alt="Test" style="width:100%">
                     <div class="container">
                         <h6><b>Charon's Trial</b></h6>
                         <h8>The first mobile game, <span class="opacity">January 28, 2024</span></h8>
@@ -104,7 +109,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
                 <!-- Blog entry -->
                 <div class="card-4 margin white">
-                    <img src="images/website/Chronosin.jpeg" alt="Test2" style="width:100%">
+                    <img src="/assets/website/Chronosin.jpeg" alt="Test2" style="width:100%">
                     <div class="container">
                         <h6><b>Chronosin</b></h6>
                         <h8>A 3d Computer/Mobile game attempt , <span class="opacity">January 28, 2024</span></h8>
@@ -220,8 +225,8 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="/index.html" class="active">1</a>
-            <a href="/page1.html">2</a>
-            <a href="/GameHub.html">3</a>
+            <a href="/blog_pages/CharonsTrial/page1.html">2</a>
+            <a href="/blog_pages/Chronosin/page1.html">3</a>
             <a href="#">&raquo;</a>
         </div>
     </footer>

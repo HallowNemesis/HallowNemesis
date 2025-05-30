@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
+    <title>Hallow Nemesis - Javascript Pong</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/fontstyles.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-image: linear-gradient(to right, navy, darkred);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+
+        .board {
+            height: 85vh;
+            width: 80vw;
+            background-image: linear-gradient(to right, rgb(73, 63, 63), grey);
+            border-radius: 14px;
+        }
+
+        .ball {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            position: fixed;
+            top: calc(50% - 15px);
+            left: calc(50% - 15px);
+        }
+
+        .ball_effect {
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            animation: spinBall 0.1s linear infinite;
+            box-shadow: inset 0 0 18px #fff,
+                inset 6px 0 18px violet,
+                inset -6px 0 18px #0ff,
+                inset 6px 0 30px violet,
+                inset -6px 0 30px #0ff,
+                0 0 18px #fff, -4px 0 18px violet, 4px 0 18px #0ff;
+        }
+
+        @keyframes spinBall {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .paddle {
+            height: 100px;
+            width: 18px;
+            border: 2px solid black;
+            /* border-radius: 50%; */
+            position: fixed;
+        }
+
+        .paddle_1 {
+            top: calc(7.5vh + 55px);
+            left: calc(10vw + 30px);
+            box-shadow: inset 0 0 18px #fff,
+                inset -6px 0 18px rgb(255, 0, 100),
+                inset 6px 0 18px rgb(0, 0, 0),
+                inset -6px 0 30px rgb(255, 0, 100),
+                inset 6px 0 30px rgb(0, 0, 0),
+                0 0 18px #fff, 4px 0 18px #ffffff, -4px 0 18px rgb(251, 251, 251);
+        }
+
+        .paddle_2 {
+            top: calc(85vh + 7.5vh - 100px - 55px);
+            right: calc(10vw + 30px);
+            box-shadow: inset 0 0 18px #fff,
+                inset 6px 0 18px rgb(0, 255, 255),
+                inset -6px 0 18px rgb(0, 0, 0),
+                inset 6px 0 30px #000000,
+                inset -6px 0 30px rgb(0, 255, 255),
+                0 0 18px #fff, -4px 0 18px #f3bad6, 4px 0 18px #0ff;
+        }
+
+        .player_1_score {
+            height: 50px;
+            width: 50px;
+            color: chartreuse;
+            position: fixed;
+            left: 4vmax;
+            margin-bottom: 30px;
+        }
+
+        .player_2_score {
+            height: 50px;
+            width: 50px;
+            color: chartreuse;
+            position: fixed;
+            left: 92vmax;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            position: fixed;
+            /* color: #48426d; */
+            height: 10vh;
+            text-align: center;
+            width: 70vw;
+            color: #c9cbff;
+            left: 15vw;
+            margin: 30px auto auto auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top" style="margin-bottom: 50px;">
+        <div class="row padding black">
+            <div class="col s3">
+                <a href="/index.html" class="button block black">Home</a>
+            </div>
+            <div class="col s3">
+                <a href="/about.html" class="button block black">About</a>
+            </div>
+            <div class="col s3">
+                <a href="/GameHub.html" class="button block black">Games</a>
+            </div>
+            <div class="col s3">
+                <a href="/#where" class="button block black">Where</a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- <div>
+            <h1 style="margin-top: 50px; text-align: center; color: white"> PONG</h1>
+
+        </div> -->
+        <div class="board">
+
+            <div class='ball'>
+                <div class="ball_effect"></div>
+            </div>
+            <div class="paddle_1 paddle"></div>
+            <div class="paddle_2  paddle"></div>
+            <h2 class="player_1_score">0</h2>
+            <h2 class="player_2_score">0</h2>
+            <h2 class="message">
+                Press Enter to Play Pong
+            </h2>
+        </div>
+    </div>
+    <script src="/javascript_games/pong/pong.js"></script>
+</body>
+
+</html>

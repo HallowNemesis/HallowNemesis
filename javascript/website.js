@@ -29,4 +29,10 @@ function submitComment(button) {
     } else {
         alert('Please enter your name and comment.');
     }
+
+    function likePost(button) {
+        const countSpan = button.querySelector('.like-count');
+        let count = parseInt(countSpan.textContent);
+        countSpan.textContent = count + 1;
+    }
 }

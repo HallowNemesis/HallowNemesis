@@ -17,29 +17,10 @@ HTML5, CSS3, and JavaScript
 
 Git and GitHub for version control
 
-(Optional) CSS frameworks such as Tailwind CSS or Bootstrap
-
-(Optional) Animation libraries such as GSAP or Framer Motion
-
 Live Demo
 You can view the live version of this portfolio website at: []
 
-Folder Structure
-Copy code
-Portfolio-Website/
-├── index.html
-├── styles/
-│   └── style.css
-├── scripts/
-│   └── app.js
-├── images/
-│   └── ...
-└── README.md
 Author
-Created by [Your Name].
+Created by Logan Hamilton.
 GitHub: [https://github.com/HallowNemesis]
-LinkedIn: [https://linkedin.com/in/YourUsername]
-Portfolio Website: [your-website-link-here]
-
-License
-This project is open-source and available under the MIT License.
+Portfolio Website: [[https://hallownemesis.github.io/HallowNemesis/]
