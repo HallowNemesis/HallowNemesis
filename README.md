@@ -23,4 +23,4 @@ You can view the live version of this portfolio website at: []
 Author
 Created by Logan Hamilton.
 GitHub: [https://github.com/HallowNemesis]
-Portfolio Website: [[https://hallownemesis.github.io/HallowNemesis/]
+Portfolio Website: [[https://hallownemesis.github.io/]
