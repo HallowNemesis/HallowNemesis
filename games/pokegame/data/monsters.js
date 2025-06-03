@@ -5,7 +5,7 @@ const monsters = {
             y: 325
         },
         image: {
-            src: '/gameimgs/backgrounds/simple2d/embySprite.png'
+            src: '/assets/game/backgrounds/simple2d/embySprite.png'
         },
         frames: {
             max: 4,
@@ -21,7 +21,7 @@ const monsters = {
             y: 100
         },
         image: {
-            src: '/gameimgs/backgrounds/simple2d/draggleSprite.png'
+            src: '/assets/game/backgrounds/simple2d/draggleSprite.png'
         },
         frames: {
             max: 4,
@@ -38,7 +38,7 @@ const monsters = {
             y: 100
         },
         image: {
-            src: '/gameimgs/backgrounds/simple2d/ghostevo.png'
+            src: '/assets/game/backgrounds/simple2d/ghostevo.png'
         },
         frames: {
             max: 5,

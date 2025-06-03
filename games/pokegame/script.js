@@ -50,22 +50,22 @@ battleZonesMap.forEach((row, i) => {
 });
 
 const playerDownImage = new Image();
-playerDownImage.src = '/gameimgs/backgrounds/simple2d/playerDown.png';
+playerDownImage.src = '/assets/game/backgrounds/simple2d/playerDown.png';
 
 const playerLeftImage = new Image();
-playerLeftImage.src = '/gameimgs/backgrounds/simple2d/playerLeft.png';
+playerLeftImage.src = '/assets/game/backgrounds/simple2d/playerLeft.png';
 
 const playerUpImage = new Image();
-playerUpImage.src = '/gameimgs/backgrounds/simple2d/playerUp.png';
+playerUpImage.src = '/assets/game/backgrounds/simple2d/playerUp.png';
 
 const playerRightImage = new Image();
-playerRightImage.src = '/gameimgs/backgrounds/simple2d/playerRight.png';
+playerRightImage.src = '/assets/game/backgrounds/simple2d/playerRight.png';
 
 const foregroundImage = new Image();
-foregroundImage.src = '/gameimgs/backgrounds/simple2d/PellotTownForeground.png';
+foregroundImage.src = '/assets/game/backgrounds/simple2d/PellotTownForeground.png';
 
 const image = new Image();
-image.src = '/gameimgs/backgrounds/simple2d/Pellet Town.png';
+image.src = '/assets/game/backgrounds/simple2d/Pellet Town.png';
 
 
 const player = new Sprite({

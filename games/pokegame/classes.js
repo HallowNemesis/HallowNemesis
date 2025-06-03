@@ -151,7 +151,7 @@ class Monster extends Sprite {
             case 'Fireball':
                 audio.initFireball.play();
                 const fireballImage = new Image();
-                fireballImage.src = '/gameimgs/backgrounds/simple2d/fireball.png';
+                fireballImage.src = '/assets/game/backgrounds/simple2d/fireball.png';
                 const fireball = new Sprite({
                     position: {
                         x: this.position.x,
@@ -199,7 +199,7 @@ class Monster extends Sprite {
                 break;
             case 'Watershot':
                 const waterShotImage = new Image();
-                waterShotImage.src = '/gameimgs/backgrounds/simple2d/fireball.png';
+                waterShotImage.src = '/assets/game/backgrounds/simple2d/fireball.png';
                 const waterShot = new Sprite({
                     position: {
                         x: this.position.x,
