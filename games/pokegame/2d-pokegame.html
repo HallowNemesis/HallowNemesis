@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
     <title>Hallow Nemesis - Javascript pokegame</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/fontstyles.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/fontstyles.css" />
 
     <!-- This script is for google ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3259707707501940"
@@ -44,59 +44,66 @@
 <body>
     <div class="top">
         <div class="row padding black">
-            <div class="col s3">
-                <a href="/index.html" class="button block black">Home</a>
+            <div class="col s4">
+                <a href="index.html" class="button block black">Home</a>
             </div>
-            <div class="col s3">
-                <a href="/about.html" class="button block black">About</a>
+            <div class="col s4">
+                <a href="about.html" class="button block black">About</a>
             </div>
-            <div class="col s3">
-                <a href="/GameHub.html" class="button block black">Games</a>
-            </div>
-            <div class="col s3">
-                <a href="/#where" class="button block black">Where</a>
+            <div class="col s4">
+                <div class="dropdown">
+                    <button class="button block black dropdown-toggle">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="apps/Applications.html" class="button block black">Applications</a>
+                        <a href="games/GameHub.html" class="button block black">Games</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div style="display:inline-block; position: absolute; margin-top: 150px; top: 50%; left: 50%; transform: translate(-50%,-50%);">
-    <div style="color: whitesmoke; text-align: center;"> <h1> 2D-Pokegame</h1></div>
-
-    <div style="display: inline-block; position: relative; ">
-        <div id="overlappingDiv" style="background-color: black; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; pointer-events: none; z-index: 10;">
+    <div
+        style="display:inline-block; position: absolute; margin-top: 150px; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+        <div style="color: whitesmoke; text-align: center;">
+            <h1> 2D-Pokegame</h1>
         </div>
 
-        <canvas style="border: 5px solid black; border-radius: 15px;"></canvas>
-
-        <div id="userInterface" style="display: none;">
-            <!-- Health Bar of Opponent-->
-            <div
-                style="background-color: white; width: 250px; position: absolute; top: 50px; left: 50px; border: 4px black solid; padding: 12px">
-                <h2 style="font-size: 18px;">Ghost</h2>
-                <div style="position: relative;">
-                    <div style="height: 5px; background-color:  #ccc; margin-top: 10px;"></div>
-                    <div id="enemyHealthBar"
-                        style="height: 5px; background-color:  green; position: absolute; top: 0; left: 0; right: 0;">
-                    </div>
-                </div>
+        <div style="display: inline-block; position: relative; ">
+            <div id="overlappingDiv"
+                style="background-color: black; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; pointer-events: none; z-index: 10;">
             </div>
 
-            <!-- Health Bar of User-->
-            <div
-                style="background-color: white; width: 250px; position: absolute; top: 330px; right: 50px; border: 4px black solid; padding: 12px">
-                <h1 style="font-size: 18px;">Emby</h1>
-                <div style="position: relative;">
-                    <div style="height: 5px; background-color:  #ccc; margin-top: 10px;"></div>
-                    <div id="playerHealthBar"
-                        style="height: 5px; background-color:  green; position: absolute; top: 0; left: 0; right: 0;">
+            <canvas style="border: 5px solid black; border-radius: 15px;"></canvas>
+
+            <div id="userInterface" style="display: none;">
+                <!-- Health Bar of Opponent-->
+                <div
+                    style="background-color: white; width: 250px; position: absolute; top: 50px; left: 50px; border: 4px black solid; padding: 12px">
+                    <h2 style="font-size: 18px;">Ghost</h2>
+                    <div style="position: relative;">
+                        <div style="height: 5px; background-color:  #ccc; margin-top: 10px;"></div>
+                        <div id="enemyHealthBar"
+                            style="height: 5px; background-color:  green; position: absolute; top: 0; left: 0; right: 0;">
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Health Bar of User-->
+                <div
+                    style="background-color: white; width: 250px; position: absolute; top: 330px; right: 50px; border: 4px black solid; padding: 12px">
+                    <h1 style="font-size: 18px;">Emby</h1>
+                    <div style="position: relative;">
+                        <div style="height: 5px; background-color:  #ccc; margin-top: 10px;"></div>
+                        <div id="playerHealthBar"
+                            style="height: 5px; background-color:  green; position: absolute; top: 0; left: 0; right: 0;">
+                        </div>
+                    </div>
+                </div>
 
 
-            <div
-                style="background-color: white; height: 140px; position: absolute; bottom: 0; left: 0; right: 0; border-top: 4px black solid; display: flex;">
-                <div id="dialogueBox" style="
+                <div
+                    style="background-color: white; height: 140px; position: absolute; bottom: 0; left: 0; right: 0; border-top: 4px black solid; display: flex;">
+                    <div id="dialogueBox" style="
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -108,37 +115,42 @@
                 font-size: 24px;
                 cursor: pointer;
                 ">
-                </div>
+                    </div>
 
-                <div id="attacksBox" style="width:66.66%; display: grid; grid-template-columns: repeat(2, 1fr);"></div>
-                <div
-                    style="display: flex; align-items: center; justify-content: center; width: 33.33%; border-left: 4px black solid;">
-                    <h1 id="attackType">Attack Type</h1>
+                    <div id="attacksBox" style="width:66.66%; display: grid; grid-template-columns: repeat(2, 1fr);">
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; width: 33.33%; border-left: 4px black solid;">
+                        <h1 id="attackType">Attack Type</h1>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div>
+            <h3> CONTROLS</h3>
+            <p>W - up</p>
+            <p>A - up</p>
+            <p>S - up</p>
+            <p>D - up</p>
+        </div>
     </div>
 
-    <div>
-        <h3> CONTROLS</h3>
-        <p>W - up</p>
-        <p>A - up</p>
-        <p>S - up</p>
-        <p>D - up</p>
-    </div>
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"
+        integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="/javascript_games/pokegame/data/audio.js"></script>
-    <script src="/javascript_games/pokegame/data/battleZones.js"></script>
-    <script src="/javascript_games/pokegame/data/collisions.js"></script>
-    <script src="/javascript_games/pokegame/data/attacks.js"></script>
-    <script src="/javascript_games/pokegame/data/monsters.js"></script>
-    <script src="/javascript_games/pokegame/classes.js"></script>
-    <script src="/javascript_games/pokegame/script.js"></script>
-    <script src="/javascript_games/pokegame/battleScene.js"></script>
+    <script src="games/pokegame/data/audio.js"></script>
+    <script src="games/pokegame/data/battleZones.js"></script>
+    <script src="games/pokegame/data/collisions.js"></script>
+    <script src="games/pokegame/data//attacks.js"></script>
+    <script src="games/pokegame/data/monsters.js"></script>
+    <script src="games/pokegame/classes.js"></script>
+    <script src="games/pokegame/script.js"></script>
+    <script src="games/pokegame/battleScene.js"></script>
 
 </body>
 

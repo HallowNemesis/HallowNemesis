@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
     <title>Hallow Nemesis - JavaScript Minesweeper</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/fontstyles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/fontstyles.css" />
 
     <!-- This script is for google ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3259707707501940"
@@ -39,30 +39,37 @@
             text-align: center;
             font-family: monospace;
         }
-        .valid, .bomb{
+
+        .valid,
+        .bomb {
             width: 40px;
             height: 40px;
             border: 5px solid;
             border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
             box-sizing: border-box;
         }
-        .checked{
+
+        .checked {
             width: 40px;
             height: 40px;
             border: 5px solid;
             border-color: #9c998d;
             box-sizing: border-box;
         }
-        .one{
+
+        .one {
             color: #e76346;
         }
-        .two{
+
+        .two {
             color: #4199d3;
         }
-        .three{
+
+        .three {
             color: #57da59;
         }
-        .four{
+
+        .four {
             color: #bb41d3;
         }
     </style>
@@ -71,32 +78,35 @@
 <body style="background: lightslategrey;">
     <div class="top">
         <div class="row padding black">
-            <div class="col s3">
-                <a href="/index.html" class="button block black">Home</a>
+            <div class="col s4">
+                <a href="index.html" class="button block black">Home</a>
             </div>
-            <div class="col s3">
-                <a href="/about.html" class="button block black">About</a>
+            <div class="col s4">
+                <a href="about.html" class="button block black">About</a>
             </div>
-            <div class="col s3">
-                <a href="/GameHub.html" class="button block black">Games</a>
-            </div>
-            <div class="col s3">
-                <a href="/#where" class="button block black">Where</a>
+            <div class="col s4">
+                <div class="dropdown">
+                    <button class="button block black dropdown-toggle">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="apps/Applications.html" class="button block black">Applications</a>
+                        <a href="games/GameHub.html" class="button block black">Games</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
     </div>
-        <div id="myElement" class="container">
-            <div class="grid"></div>
-            <div>Flags left: <span id='flags-left'></span></div>
-            <div id="result"></div>
-        </div>
+    <div id="myElement" class="container">
+        <div class="grid"></div>
+        <div>Flags left: <span id='flags-left'></span></div>
+        <div id="result"></div>
+    </div>
 
     </div>
 
-    <script src="/javascript_games/minesweeper/minesweeper.js"></script>
+    <script src="games/minesweeper/minesweeper.js"></script>
 </body>
 
 </html>

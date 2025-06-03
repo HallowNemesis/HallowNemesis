@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Map Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #toggleControls {
+            background-color: #003366;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14x;
+            font-weight: bold;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease;
+        }
+
+        #toggleControls:hover {
+            background-color: #002244;
+        }
+
+        #controls.collapsed #mainControls {
+            display: none;
+        }
+
+        #controls {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 900px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-sizing: border-box;
+        }
+
+        #controls input,
+        #controls select,
+        #controls button {
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        #controls button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #controls button:hover {
+            background-color: #0056b3;
+        }
+
+        #controls label {
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+            margin-right: 10px;
+            min-width: 150px;
+        }
+
+        #controls.collapsed {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #controls.collapsed #bottomControls {
+            margin-left: auto;
+        }
+
+        #mainControls {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+        }
+
+
+
+        #topRow {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        #controls.collapsed #topRow {
+            margin-right: auto;
+            gap: 10px;
+            padding: 0;
+        }
+
+        #bottomControls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 20px;
+            justify-content: flex-start;
+            transition: all 0.2s ease;
+        }
+
+        #right-toolbar {
+            position: fixed;
+            top: 30%;
+            right: 0px;
+            width: 50;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            background: #f0f0f0;
+            border-left: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+
+            flex-direction: row;
+            align-items: flex-start;
+            user-select: none;
+
+        }
+
+        #toolbar-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        #brush-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 12px;
+            /* push slider away from buttons */
+        }
+
+        #right-toolbar h3 {
+            margin-top: 0;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+
+
+        #right-toolbar button {
+            width: 100%;
+            padding: 4px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #right-toolbar button.active {
+            background-color: #0056b3;
+        }
+
+        #brushSizeSlider {
+            writing-mode: bt-lr;
+            appearance: slider-vertical;
+            -webkit-appearance: slider-vertical;
+            width: 8px;
+            height: 120px;
+            margin: 0;
+            background: #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        #brushSizeLabel {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        #tool-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        canvas {
+            border: 2px solid #333;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+
+        #sprite-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tile {
+            border: 1px solid #aaa;
+            margin: 3px;
+            cursor: pointer;
+            image-rendering: pixelated;
+        }
+
+        .tile.selected {
+            outline: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controls">
+        <div id="topRow">
+            <button id="toggleControls">⏷</button>
+        </div>
+
+        <div id="mainControls">
+            <div class="input-group">
+                <label>Spritesheet:
+                    <input type="file" id="spriteSheetInput">
+                </label>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Tile Width (px):
+                        <input type="number" id="tileWidth" value="32">
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label>Tile Height (px):
+                        <input type="number" id="tileHeight" value="32">
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Map Width (tiles):
+                        <input type="number" id="mapWidth" value="10">
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label>Map Height (tiles):
+                        <input type="number" id="mapHeight" value="10">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottomControls">
+            <button onclick="initMapEditor()">Load</button>
+            <select id="exportType">
+                <option value="png">Export PNG</option>
+                <option value="java">Export Java Array</option>
+            </select>
+            <button onclick="exportMap()">Export</button>
+            <button onclick="clearMap()">Clear</button>
+            <div id="zoomControls">
+                <label for="zoomSlider">Zoom:</label>
+                <input type="range" id="zoomSlider" min="0.1" max="10" value="2" step="0.1" />
+                <span id="zoomLevel">200%</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="right-toolbar">
+        <h3 id="dragHandle">Tools (drag me)</h3>
+
+        <div id="toolbar-content">
+            <!-- Brush Size Slider on the Left -->
+            <div id="brush-slider">
+                <input id="brushSizeSlider" type="range" min="1" max="5" value="1" step="1">
+                <div id="brushSizeLabel">1 px</div>
+            </div>
+
+            <!-- Tool Buttons -->
+            <div id="tool-buttons">
+                <button id="drawToolButton">Draw</button>
+                <button id="fillToolButton">Fill</button>
+                <button id="eraserToolButton">Erase</button>
+                <button id="undoButton">Undo</button>
+                <button id="redoButton">Redo</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <canvas id="mapCanvas"></canvas>
+    <div id="sprite-toolbar"></div>
+
+    <script src="mapeditor.js"></script>
+
+</body>
+
+</html>
