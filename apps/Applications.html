@@ -20,13 +20,100 @@
     h3,
     h4,
     h5,
-    h6,
-    h7,
-    h8,
-    h9,
-    h10 {
+    h6 {
       font-family: Arial, Helvetica, "Raleway", sans-serif;
-      margin: 0
+      margin: 0;
+      padding: 0;
+    }
+
+    .light-grey {
+      background-color: #f4f4f4;
+    }
+
+    .top {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .top .row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .button {
+      background-color: #444;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+    }
+
+    .button:hover {
+      background-color: #666;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .app-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 10px;
+      justify-items: center;
+    }
+
+    .app-button {
+      background-color: #777;
+      border: 10px solid #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app-button img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .app-button:hover {
+      transform: scale(1.1);
+    }
+
+    h4 {
+      font-size: 45px;
+      font-family: Narrow;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 72px;
+      font-family: Times;
+      text-align: center;
     }
   </style>
 </head>
@@ -53,26 +140,15 @@
   </div>
 
 
-  <div>
-    <header style="margin-top: 100px;">
-      <h4 style="font-size: 45px; font-family: Narrow">Welcome to the </h4>
-      <h3 style="font-weight: bold; font-style: italic; font-size: 72px; font-family:Times">APP HUB</h3>
-    </header>
+  <header>
+    <h4>Welcome to the</h4>
+    <h3>APP HUB</h3>
+  </header>
 
-    <table>
-      <tr>
-        <td>
-          <a href="/apps/gameMapEditor/mapEditor.html">
-            <button>
-              <p>2d TileMap Editor</p>
-            </button>
-          </a>
-        </td>
-      </tr>
-    </table>
+  <div class="app-container">
+    <a href="/apps/gameMapEditor/mapEditor.html" class="app-button">
+      <p>2d TileMap Editor</p>
+    </a>
   </div>
-
-
 </body>
-
 </html>

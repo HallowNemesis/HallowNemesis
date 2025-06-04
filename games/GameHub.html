@@ -3,33 +3,112 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hallow Nemesis - The Game Hub</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/fontstyles.css">
-
 
   <!-- This script is for google ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3259707707501940"
     crossorigin="anonymous"></script>
 
   <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        h7,
-        h8,
-        h9,
-        h10 {
-            font-family: Arial, Helvetica, "Raleway", sans-serif;
-            margin: 0
-        }
-        </style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: Arial, Helvetica, "Raleway", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .light-grey {
+      background-color: #f4f4f4;
+    }
+
+    .top {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .top .row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .button {
+      background-color: #444;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+    }
+
+    .button:hover {
+      background-color: #666;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 10px;
+      justify-items: center;
+    }
+
+    .game-button {
+      background-color: #777;
+      border: 10px solid #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-button img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .game-button:hover {
+      transform: scale(1.1);
+    }
+
+    h4 {
+      font-size: 45px;
+      font-family: Narrow;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 72px;
+      font-family: Times;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body class="light-grey">
@@ -53,79 +132,55 @@
     </div>
   </div>
 
+  <header>
+    <h4>Welcome to the</h4>
+    <h3>GAME HUB</h3>
+  </header>
 
-  <div>
-    <header style="margin-top: 100px;">
-      <h4 style="font-size: 45px; font-family: Narrow">Welcome to the </h4>
-      <h3 style="font-weight: bold; font-style: italic; font-size: 72px; font-family:Times">GAME HUB</h3>
-    </header>
+  <div class="game-container">
+    <a href="/games/breakout/breakout.html" class="game-button">
+      <img src="/assets/game/gameimgs/breakout.png" alt="Break Out">
+      <p>Break Out</p>
+    </a>
 
-    <table>
-      <td>
-        <tr><a href="/games/breakout/breakout.html">
-            <button>
-              <p>Break Out</p>
-              <img src="/assets/game/gameimgs/breakout.png"></img>
-            </button>
-          </a>
-        </tr>
-        <tr><a href="/games/snake/snake.html">
-            <button>
-              <p>Snake</p>
-              <img src="/assets/game/gameimgs/snake.png"></img>
-            </button>
-          </a>
-      </td>
-      <tr><a href="/games/flappybird/flappybird.html">
-          <button>
-            <p>Flappy Bird</p>
-            <img src="/assets/game/gameimgs/logo.png"></img>
-          </button>
-        </a></td>
-      <tr><a href="/games/platformer/platformer.html">
-          <button>
-            <p>Platform version 0.0.1</p>
-            <img src="/assets/game/gameimgs/platformer.png"></img>
-          </button>
-        </a></td>
-        </td>
-        <td>
-      <tr><a href="/games/2048/2048.html">
-          <button>
-            <p>2048</p>
-            <img src="/assets/game/gameimgs/2048.png"></img>
-          </button>
-        </a></td>
-      <tr><a href="/games/pong/pong.html">
-          <button>
-            <p>Pong</p>
-            <img src="/assets/game/gameimgs/pong.png"></img>
-          </button>
-        </a></td>
-      <tr><a href="#">
-          <button>
-            <p>Coming Soon (Stick Fight)</p>
-          </button>
-        </a></td>
-      <tr><a href="/games/pokegame/2d-pokegame.html">
-          <button>
-            <p>pokegame</p>
-            <img src="/assets/game/gameimgs/simple2d.png"></img>
-          </button>
-        </a></td>
-        <td>
-      <tr><a href="/games/minesweeper/minesweeper.html">
-          <button>
-            <p>Minesweeper</p>
-            <!-- <img src="/assets/game/gameimgs/.png"></img> -->
-          </button>
-        </a></td>
+    <a href="/games/snake/snake.html" class="game-button">
+      <img src="/assets/game/gameimgs/snake.png" alt="Snake">
+      <p>Snake</p>
+    </a>
 
-        </td>
-    </table>
+    <a href="/games/flappybird/flappybird.html" class="game-button">
+      <img src="/assets/game/gameimgs/logo.png" alt="Flappy Bird">
+      <p>Flappy Bird</p>
+    </a>
+
+    <a href="/games/platformer/platformer.html" class="game-button">
+      <img src="/assets/game/gameimgs/platformer.png" alt="Platformer">
+      <p>Platform version 0.0.1</p>
+    </a>
+
+    <a href="/games/2048/2048.html" class="game-button">
+      <img src="/assets/game/gameimgs/2048.png" alt="2048">
+      <p>2048</p>
+    </a>
+
+    <a href="/games/pong/pong.html" class="game-button">
+      <img src="/assets/game/gameimgs/pong.png" alt="Pong">
+      <p>Pong</p>
+    </a>
+
+    <a href="#" class="game-button">
+      <p>Coming Soon (Stick Fight)</p>
+    </a>
+
+    <a href="/games/pokegame/2d-pokegame.html" class="game-button">
+      <img src="/assets/game/gameimgs/simple2d.png" alt="Pokegame">
+      <p>Pokegame</p>
+    </a>
+
+    <a href="/games/minesweeper/minesweeper.html" class="game-button">
+      <p>Minesweeper</p>
+    </a>
   </div>
-
-
 </body>
 
 </html>
