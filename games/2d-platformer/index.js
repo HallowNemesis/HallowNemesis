@@ -234,7 +234,7 @@ const defaultBackground = new Sprite({
         x: 0,
         y: 0,
     },
-    imageSrc: '/gameimgs/backgrounds/platform/background.png',
+    imageSrc: '/assets/game/backgrounds/platform/background.png',
 })
 
 const backgroundImageHeight = 432;
