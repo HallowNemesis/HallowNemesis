@@ -336,6 +336,9 @@ function updateZoom(newScale) {
 
 // --- Event Listeners ---
 
+document.getElementById('exportMap').addEventListener('click', exportMap);
+document.getElementById('clearMap').addEventListener('click', clearMap);
+
 document.getElementById('spriteSheetInput').addEventListener('change', function (event) {
     const file = event.target.files[0];
     const img = new Image();
